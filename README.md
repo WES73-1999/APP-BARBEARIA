@@ -11,12 +11,15 @@ Módulo Principal
 4 - Produtos a venda
 5 - Agenda horário disponível
 6 - Carrossel de promoções
+7- Opção de fila de espera ou agendamento
+8 - Controle de estoque ?
   
 Módulo Gestor
 1 - Timeline da agenda
 2 - Gestão de Serviços
 3 - Gestão financeiro
 4 - Configuração do App
+5- Escolha de nome para o APP
   
 Atualizado em 24/06/2026
 
