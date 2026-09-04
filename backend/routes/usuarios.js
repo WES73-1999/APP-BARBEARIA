@@ -1,20 +1,20 @@
+
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-//Listar
-router.get('/', aync (req, res) => {
+// Listar
+router.get('/', async (req, res) => {
 	try {
 		const result = await db.query(
-		'SELECT id, nome, email, telefone, tipo_usuario, data_criacao FROM usuarios ORDER BY id DESC'
+			`SELECT id, nome, email, telefone, tipo_usuario, data_criacao FROM usuarios ORDER BY id DESC`
 		);
-		res.json(result.rows);
+		res,json(result.rows);
 	} catch (error) {
 		console.error(error);
-		rest.status(500).json({error: 'Erro ao buscar usuario.'});
+		res.status(500).json({ error: 'Erro ao buscar usuarios.' });
 	}
 });
-
 //cadastros
 router.post('/', async (req, res) => {
 	const { nome, email, senha, telefone, tipo_usuario, observacoes_alergias } = req.body;
