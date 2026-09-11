@@ -5,7 +5,7 @@ const db = require('../db');
 router.get("/", async (req, res) => {
   try {
     const query = `
-        SELECT *
+        SELECT
             a.id,
             a.data_hora,
             a.status,
@@ -20,8 +20,7 @@ router.get("/", async (req, res) => {
         JOIN barbeiros b ON a.barbeiro_id = b.id
         JOIN usuarios ub ON b.usuario_id = ub.id
         JOIN servicos s ON a.servico_id = s.id
-        ORDER BY a.data_hora ASC;
-    `;
+        ORDER BY a.data_hora ASC;    `;
     const result = await db.query(query);
     res.json(result.rows);
   } catch (error) {
