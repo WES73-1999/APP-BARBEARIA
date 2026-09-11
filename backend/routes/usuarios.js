@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 		const result = await db.query(
 			`SELECT id, nome, email, telefone, tipo_usuario, data_criacao FROM usuarios ORDER BY id DESC`
 		);
-		res,json(result.rows);
+		res.json(result.rows);
 	} catch (error) {
 		console.error(error);
 		res.status(500).json({ error: 'Erro ao buscar usuarios.' });
@@ -42,13 +42,13 @@ router.post('/', async (req, res) => {
 		[usuarioId]
 		);
 	}
-	rest.status(201).json(newUser.rows[0]);
+	res.status(201).json(newUser.rows[0]);
 	} catch (error){
 		console.error(error);
 	if (error.code === '23505'){ //codigo para violacao de UNIQUE de email ja cadastrado
 		return res.status(400).json({error: 'Este email ja esta cadastrado.'});
 	}
-	rest.status(500).json({error: 'Erro ao cadastrar usuario'});
+	res.status(500).json({error: 'Erro ao cadastrar usuario'});
 	}
 });
 

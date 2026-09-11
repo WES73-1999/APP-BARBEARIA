@@ -24,7 +24,7 @@ router.post("/planos", async (req, res) => {
   try {
     const result = await db.query(
       `INSERT INTO planos_assinatura (nome, descricao, preco_mensal, limite_cortes_mes)
-            VALUES ($1, $2, $3, $4, TRUE) RETURNING *`,
+            VALUES ($1, $2, $3, $4) RETURNING *`,
       [nome, descricao, preco_mensal, limite_cortes_mes],
     );
     res.status(201).json(result.rows[0]);
