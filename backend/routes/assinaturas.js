@@ -34,4 +34,4 @@ router.post("/planos", async (req, res) => {
   }
 });
 
-modules.exports = router;
+module.exports = router;
