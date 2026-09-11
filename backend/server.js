@@ -17,9 +17,9 @@ app.use(express.json()); //recebimento do json na requisição
 
 //prefixos de rotas
 app.use('/usuarios', usuariosRoutes);
-app.use('servicos', servicosRoutes);
-app.use('agendamentos', agendamentosRoutes);
-app.use('assinaturas', assinaturasRoutes);
+app.use('/servicos', servicosRoutes);
+app.use('/agendamentos', agendamentosRoutes);
+app.use('/assinaturas', assinaturasRoutes);
 
 app.get('/', (req, res) => {
 	res.json({mensagem: 'API comunicando!'});
