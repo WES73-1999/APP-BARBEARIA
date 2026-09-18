@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendar Horário - Skin Barber</title>
+  <!-- Reaproveite o seu CSS atual para manter o mesmo estilo -->
+  <link rel="stylesheet" href="frontend/style.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+
+  <!-- Card Principal de Agendamento -->
+  <div class="modal-content" style="position: static; transform: none; width: 100%; max-width: 500px;">
+    
+    <div style="text-align: center; margin-bottom: 24px;">
+      <h2 style="color: var(--copper-light); font-family: var(--font-display);">Agende seu Horário</h2>
+      <p class="muted">Preencha os dados abaixo para garantir sua cadeira.</p>
+    </div>
+
+    <form id="form-agendamento">
+      <!-- 1. Dados Pessoais -->
+      <div class="form-group">
+        <label>Seu Nome Completo</label>
+        <input type="text" id="agenda-nome" placeholder="Ex: João da Silva" required>
+      </div>
+
+      <div class="form-group">
+        <label>WhatsApp</label>
+        <input type="tel" id="agenda-tel" placeholder="(00) 00000-0000" required>
+      </div>
+
+      <!-- 2. Serviço -->
+      <div class="form-group">
+        <label>Qual serviço deseja?</label>
+        <select id="agenda-servico" required>
+          <option value="" disabled selected>Selecione uma opção...</option>
+          <option value="cabelo">Corte de Cabelo (R$ 45,00)</option>
+          <option value="barba">Barba Lenhador (R$ 35,00)</option>
+          <option value="combo">Cabelo + Barba (R$ 70,00)</option>
+        </select>
+      </div>
+
+      <!-- 3. Data e Hora -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="form-group">
+          <label>Data</label>
+          <input type="date" id="agenda-data" required>
+        </div>
+        <div class="form-group">
+          <label>Horário</label>
+          <input type="time" id="agenda-hora" required>
+        </div>
+      </div>
+
+      <!-- Botão Submeter -->
+      <button type="submit" class="primary-button" style="width: 100%; margin-top: 24px;">
+        Confirmar Agendamento
+      </button>
+    </form>
+    
+  </div>
+
+  <script src="frontend/agendamento.js" defer></script>
+</body>
+</html>
