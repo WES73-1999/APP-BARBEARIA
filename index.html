@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skin Barber - Centro de Comando</title>
-  
+
   <!-- Conexão com o seu CSS e JS -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="frontend/style.css">
+  <script src="frontend/app.js" defer></script>
 </head>
+
 <body>
 
   <div class="application">
-    
+
     <!-- ==========================================
          SIDEBAR 
          ========================================== -->
@@ -21,8 +23,10 @@
         <svg class="brand-emblem small" viewBox="0 0 120 120" role="img" aria-label="Âncora Skin Barber">
           <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="3" />
           <path d="M60 20v57M44 35h32" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-          <path d="M41 77c0 13 8 22 19 22s19-9 19-22M31 75c0 17 13 29 29 29s29-12 29-29" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
-          <path d="M45 100h30M60 20l-7 8 7 8 7-8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+          <path d="M41 77c0 13 8 22 19 22s19-9 19-22M31 75c0 17 13 29 29 29s29-12 29-29" fill="none"
+            stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+          <path d="M45 100h30M60 20l-7 8 7 8 7-8z" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" />
         </svg>
         <strong>SKIN</strong><small>BARBER</small>
       </div>
@@ -46,7 +50,7 @@
          CONTEÚDO PRINCIPAL 
          ========================================== -->
     <main class="main-content">
-      
+
       <header class="topbar">
         <h2>Centro de Comando</h2>
         <div class="user-summary">
@@ -57,19 +61,21 @@
 
       <!-- 1. VIEW: AGENDA E FILA -->
       <div id="view-agenda" class="view-section active">
-        
+
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <div class="segmented-control">
             <button class="active" onclick="toggleAgenda('fila', this)">Fila ao Vivo</button>
             <button onclick="toggleAgenda('agendados', this)">Agenda do Dia</button>
           </div>
-          <button class="secondary-button" style="color: var(--danger); border-color: var(--danger);" onclick="alert('Agenda pausada por 30 minutos.')">⏸ Pausar Cadeira</button>
+          <button class="secondary-button" style="color: var(--danger); border-color: var(--danger);"
+            onclick="alert('Agenda pausada por 30 minutos.')">⏸ Pausar Cadeira</button>
         </div>
 
         <section class="stats-grid">
           <div class="stat-card"><small>EM ESPERA AGORA</small><strong>02</strong></div>
           <div class="stat-card"><small>CORTES FINALIZADOS</small><strong>08</strong></div>
-          <div class="stat-card"><small>PRÓXIMO HORÁRIO</small><strong style="font-size: 1.6rem; margin-top: 20px;">16:30</strong></div>
+          <div class="stat-card"><small>PRÓXIMO HORÁRIO</small><strong
+              style="font-size: 1.6rem; margin-top: 20px;">16:30</strong></div>
         </section>
 
         <div class="section-heading">
@@ -79,19 +85,22 @@
 
         <div class="client-list" id="lista-fila">
           <article class="client-card" style="border-color: var(--copper-light);">
-            <div style="text-align: center; color: var(--paper); font-family: var(--font-display);">Iniciou<br><span style="color: var(--paper-light); font-size: 1.25rem;">14:00</span></div>
+            <div style="text-align: center; color: var(--paper); font-family: var(--font-display);">Iniciou<br><span
+                style="color: var(--paper-light); font-size: 1.25rem;">14:00</span></div>
             <div>
               <h3 style="color: var(--copper-light);">Thiago Silva</h3>
               <p class="muted">Somente Barba Lenhador</p>
             </div>
             <div style="text-align: right; display: grid; gap: 12px; justify-items: end;">
               <span class="status-badge success">EM ATENDIMENTO</span>
-              <button class="primary-button" style="min-height: 36px; padding: 8px 16px;" onclick="openModal('modal-checkout')">Finalizar e Cobrar</button>
+              <button class="primary-button" style="min-height: 36px; padding: 8px 16px;"
+                onclick="openModal('modal-checkout')">Finalizar e Cobrar</button>
             </div>
           </article>
 
           <article class="client-card">
-            <div style="text-align: center; color: var(--paper); font-family: var(--font-display);">Chegou<br><span style="color: var(--copper-light); font-size: 1.25rem;">14:30</span></div>
+            <div style="text-align: center; color: var(--paper); font-family: var(--font-display);">Chegou<br><span
+                style="color: var(--copper-light); font-size: 1.25rem;">14:30</span></div>
             <div>
               <h3>Marcelo Almeida</h3>
               <p class="muted">Cabelo + Barba (Plano Ouro)</p>
@@ -110,7 +119,7 @@
           <h2>Gestão de Clientes</h2>
           <button class="primary-button" onclick="openModal('modal-cliente', 'novo')">Novo Cliente</button>
         </div>
-        
+
         <div class="search-bar form-group">
           <input type="text" placeholder="Buscar cliente por nome ou telefone...">
           <button class="secondary-button">Buscar</button>
@@ -145,7 +154,8 @@
               </div>
             </div>
             <div style="text-align: right;">
-              <span class="status-badge" style="background: rgba(255,255,255,0.1); color: var(--muted-text);">Sem Plano</span>
+              <span class="status-badge" style="background: rgba(255,255,255,0.1); color: var(--muted-text);">Sem
+                Plano</span>
             </div>
           </article>
         </div>
@@ -184,7 +194,8 @@
             <option>Somente Fila de Espera</option>
             <option>Somente Horário Marcado</option>
           </select>
-          <button class="primary-button" style="margin-top: 16px;" onclick="alert('Configurações salvas!')">Salvar Preferências</button>
+          <button class="primary-button" style="margin-top: 16px;" onclick="alert('Configurações salvas!')">Salvar
+            Preferências</button>
         </div>
       </div>
 
@@ -201,7 +212,8 @@
         <h2 id="modal-cliente-title">Novo Cliente</h2>
         <button class="modal-close" onclick="closeModal('modal-cliente')">&times;</button>
       </div>
-      <form onsubmit="event.preventDefault(); alert('Cliente salvo com sucesso no Banco de Dados!'); closeModal('modal-cliente');">
+      <form
+        onsubmit="event.preventDefault(); alert('Cliente salvo com sucesso no Banco de Dados!'); closeModal('modal-cliente');">
         <div class="form-group">
           <label>Nome Completo</label>
           <input type="text" id="cli-nome" placeholder="Ex: João Roberto" required>
@@ -223,7 +235,8 @@
           <textarea id="cli-obs" rows="3" placeholder="Alergia a gilete, prefere máquina zero, etc..."></textarea>
         </div>
         <div style="display: flex; gap: 12px; margin-top: 24px;">
-          <button type="button" class="secondary-button" style="flex: 1;" onclick="closeModal('modal-cliente')">Cancelar</button>
+          <button type="button" class="secondary-button" style="flex: 1;"
+            onclick="closeModal('modal-cliente')">Cancelar</button>
           <button type="submit" class="primary-button" style="flex: 2;">Salvar Cliente</button>
         </div>
       </form>
@@ -263,7 +276,8 @@
       </div>
       <div style="margin-bottom: 24px;">
         <p style="color: var(--muted-text); font-size: 0.9rem;">Serviço Executado:</p>
-        <p style="color: var(--paper); font-size: 1.2rem; font-weight: bold; margin-bottom: 12px;">Somente Barba Lenhador</p>
+        <p style="color: var(--paper); font-size: 1.2rem; font-weight: bold; margin-bottom: 12px;">Somente Barba
+          Lenhador</p>
         <h1 style="color: var(--copper-light); font-family: var(--font-display); font-size: 2.5rem;">R$ 35,00</h1>
       </div>
       <form onsubmit="event.preventDefault(); alert('Pagamento Registrado no Caixa!'); closeModal('modal-checkout');">
@@ -277,7 +291,8 @@
             <option>Usar Crédito de Assinatura</option>
           </select>
         </div>
-        <button type="submit" class="primary-button" style="width: 100%; margin-top: 16px;">Finalizar Atendimento</button>
+        <button type="submit" class="primary-button" style="width: 100%; margin-top: 16px;">Finalizar
+          Atendimento</button>
       </form>
     </div>
   </div>
@@ -289,4 +304,5 @@
   </nav>
 
 </body>
+
 </html>
